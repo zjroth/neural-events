@@ -1,29 +1,19 @@
-%
 % USAGE:
-%
 %    vSequence = getSequence(this, vTimeWindow, bRemoveInterneurons)
 %
 % DESCRIPTION:
-%
 %    Get the sequence of neuron firings in the given time window
 %
 % ARGUMENTS:
-%
 %    vTimeWindow
-%
 %       The time window from which to extract a sequence
-%
 %    bRemoveInterneurons (default: true)
-%
 %       A boolean specifying whether the returned sequence should contain
 %       interneurons
 %
 % RETURNS:
-%
 %    vSequence
-%
 %       The desired sequence of firings
-%
 function [vSequence, vTimes] = getSequence(this, vTimeWindow, bRemoveInterneurons)
     if nargin < 3
         bRemoveInterneurons = true;

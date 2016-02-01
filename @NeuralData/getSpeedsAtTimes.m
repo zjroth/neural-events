@@ -1,36 +1,24 @@
-%
 % USAGE:
-%
 %    vSpeeds = getSpeedsAtTimes(this, vTimes, dWindowWidth, strUnits)
 %
 % DESCRIPTION:
-%
 %    Retrieve the speed of the animal at the given times, potentially averaging
 %    over time windows surrounding those points.
 %
 % ARGUMENTS:
-%
 %    vTimes
-%
 %       A vector containing the times at which to retrieve the animal's speed
-%
 %    dWindowWidth (default: 0)
-%
 %       The width of the windows to use for averaging speeds over. The
 %       windows will be centered at the provided times and have total width
 %       as specified in this parameter, depending on the units.
-%
 %    strUnits (default: 'seconds')
-%
 %       A string specifying the units of the given times; can be 'seconds',
 %       'milliseconds', or 'indices'
 %
 % RETURNS:
-%
 %    vSpeeds
-%
 %       A vector containing the requested speeds
-%
 function vSpeeds = getSpeedsAtTimes(this, vTimes, dWindowWidth, strUnits)
     if nargin < 3
         dWindowWidth = 0;
