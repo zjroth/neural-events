@@ -141,7 +141,7 @@ function ripples = detectRipples(this, varargin)
     ripples = (ripples - 1) / sampleRate(this) + objSharpWave.Time(1);
     this.current.ripples = ripples;
 
-    this.current.ripples = getEvents(this, ripples(:, [1, 3]), 'ripple');
+    ripples = getEvents(this, ripples(:, [1, 3]), 'ripple');
 end
 
 function vSpikes = getSpikeTimes(this)
