@@ -17,7 +17,7 @@ the hippocampus. The code breaks down into three basic pieces:
   among some other convenience functions.
 The sections below describe each of these pieces in more detail along with some
 basic examples of how to use this project. This project is dependent on some
-additional functionality found in the [[https://bitbucket.org/zjroth/matlab-incremented/][matlab-incremented]] project.
+additional functionality found in the [[https://github.com/zjroth/matlab-incremented/][matlab-incremented]] project.
 
 * Sequences
 
