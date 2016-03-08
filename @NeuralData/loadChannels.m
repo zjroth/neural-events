@@ -15,7 +15,7 @@
 %    must be invoked first.
 function loadChannels(this, nMain, nLow, nHigh)
     if nargin == 4
-        this.setCurrentChannels(nMain, nLow, nHigh);
+        setCurrentChannels(this, nMain, nLow, nHigh);
     end
 
     % The set of current channels must be set before calling this function.
