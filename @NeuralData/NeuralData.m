@@ -39,15 +39,8 @@ classdef NeuralData < handle
         ripples
 
         rawSampleTimes
-    end
 
-    properties (GetAccess = public, SetAccess = public)
-        data = []
-        saved = []
-        parameters = []
-    end
 
-    properties (GetAccess = protected, SetAccess = protected)
         bOldBehavElectrData = false;
         strBehavElectrDataLFP
 
@@ -57,7 +50,15 @@ classdef NeuralData < handle
 
         currentChannels = []
         currentLfps = []
+    end
 
+    properties (GetAccess = public, SetAccess = public)
+        data = []
+        saved = []
+        parameters = []
+    end
+
+    properties (GetAccess = protected, SetAccess = protected)
         current = []
     end
 
@@ -78,8 +79,8 @@ classdef NeuralData < handle
         %         a file named [uknDataPath{2} '.dat'] in the data directory.
         %       If a string, it is the directory containing the data; and the
         %       base recording name is inferred from directory path.
-        %    strPath
-        %       The path to the folder in which the data resides
+        %    strCachePath
+        %       The path in which to store cached the data
         %---------------------------------------------------------------
         function this = NeuralData(uknDataPath, strCachePath)
             % Find the location of the .dat file for this recording.
