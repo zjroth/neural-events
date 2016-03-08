@@ -198,7 +198,7 @@ function browseEvents_OpeningFcn(hObject, eventdata, handles, varargin)
 
     % Ensure that the list of `Event`s is a non-empty list of `Event`s.
     assert(~isempty(handles.cellEvents) && isa(handles.cellEvents{1}, 'Event'), ...
-           ['browseEvents: second argument must be a non-empty list of `Event`' ...
+           ['browseEvents: second argument must be a non-empty list of `Event` ' ...
             'objects. See `help browseEvents` for more information.']);
 
     % Initially, we want to display the first event.
@@ -395,7 +395,7 @@ function btnSplitEvent_Callback(hObject, eventdata, handles)
     % Some convenience variables.
     cellEvents = handles.cellEvents;
     nCurrentEvent = handles.nCurrentEvent;
-    vEventWindow = getWindow(cellEvents(nCurrentEvent));
+    vEventWindow = getWindow(cellEvents{nCurrentEvent});
 
     % How much time do we want between the newly-created events? Let's go with
     % 20 milliseconds.
@@ -410,8 +410,8 @@ function btnSplitEvent_Callback(hObject, eventdata, handles)
                       cellEvents(nCurrentEvent : end)];
 
         % Now, set the newly-created events' endpoints.
-        setWindow(cellEvents(nCurrentEvent), [vEventWindow(1), x - dTimeSpacing]);
-        setWindow(cellEvents(nCurrentEvent + 1), [x + dTimeSpacing, vEventWindow(2)]);
+        setWindow(cellEvents{nCurrentEvent}, [vEventWindow(1), x - dTimeSpacing]);
+        setWindow(cellEvents{nCurrentEvent + 1}, [x + dTimeSpacing, vEventWindow(2)]);
 
         % Save the events to the `handles` object and update the GUI data.
         handles.cellEvents = cellEvents;
