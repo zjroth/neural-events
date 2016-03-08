@@ -151,7 +151,7 @@ end
 function objSpikeWave = getSpikeWave(this, objSharpWave)
     % Retrieve the spikes and bin them by firing time. Then smooth the resultant
     % signal.
-    nSamples = length(getTrack(this, 'eeg'));
+    nSamples = length(getTrack(this, 'xMM'));
     vSpikes = getSpikeTimes(this);
     vSpikeCounts = accumarray(vSpikes, 1, [nSamples, 1]);
     vSpikeWave = conv(vSpikeCounts, gaussfilt(100, 5), 'same');
