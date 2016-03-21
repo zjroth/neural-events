@@ -17,8 +17,7 @@
 % NOTE:
 %    This will not work with the "old" BehavElectrDataLFP files.
 function nSection = getSection(this, objEvent)
-    % Determine which ripple events do not overlap with any place-field event.
     vSection = getTrack(this, 'mazeSect');
-    vWindow = objEvent.window * sampleRate(this);
-    nSection = mode(vSection(ceil(vWindow(1)) : floor(vWindow(2))));
+    vWindow = getTimeIndices(this, objEvent.window);
+    nSection = mode(vSection(vWindow(1) : vWindow(2)));
 end
